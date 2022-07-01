@@ -17,13 +17,21 @@ class MyApp extends StatelessWidget {
           centerTitle: true,
           backgroundColor: Colors.red,
         ),
-        body: Padding(
-          padding: const EdgeInsets.all(100),
-          child: Container(
-            padding: const EdgeInsets.all(50),
-            color: Colors.grey,
-            child: const Text("salom"),
-          ),
+        body: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: [
+            const Text("text"),
+            ElevatedButton(
+              onPressed: () {},
+              child: const Text("button"),
+            ),
+            Container(
+              padding: const EdgeInsets.all(50),
+              color: Colors.grey,
+              child: const Text("salom"),
+            ),
+          ],
         ),
       ),
     );
