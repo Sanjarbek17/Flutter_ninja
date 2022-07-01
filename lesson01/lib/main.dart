@@ -10,15 +10,20 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
           title: const Text("my first app"),
           centerTitle: true,
           backgroundColor: Colors.red,
         ),
-        body: Container(
-          color: Colors.grey,
-          child: const Text("salom"),
+        body: Padding(
+          padding: const EdgeInsets.all(100),
+          child: Container(
+            padding: const EdgeInsets.all(50),
+            color: Colors.grey,
+            child: const Text("salom"),
+          ),
         ),
       ),
     );
