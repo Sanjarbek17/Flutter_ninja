@@ -21,6 +21,9 @@ class MyApp extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
+            // const Center(
+            //   child: Image(image: AssetImage("assets/image.png")),
+            // ),
             const Text("text"),
             ElevatedButton(
               onPressed: () {},
