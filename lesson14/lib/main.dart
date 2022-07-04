@@ -13,9 +13,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: const Text("my first app"),
+          title: const Text("second app"),
           centerTitle: true,
-          backgroundColor: Colors.red,
+          backgroundColor: Colors.grey,
         ),
         body: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -34,10 +34,10 @@ class MyApp extends StatelessWidget {
               ),
             ),
             Expanded(
-              flex: 5,
+              flex: 10,
               child: Container(
                 padding: const EdgeInsets.all(50),
-                color: Colors.green,
+                color: Colors.red,
                 child: const Text("1"),
               ),
             ),
