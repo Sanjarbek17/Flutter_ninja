@@ -29,6 +29,10 @@ class MyApp extends StatelessWidget {
                   backgroundImage: AssetImage("asserts/image.jpg"),
                 ),
               ),
+              const Divider(
+                height: 60,
+                color: Colors.grey,
+              ),
               const Text(
                 "name",
                 style: TextStyle(
