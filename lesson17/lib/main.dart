@@ -20,17 +20,20 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.red,
         onPressed: () {
-          // ignore: avoid_print
-          print("ishladi");
           setState(() {});
           index++;
           if (index == 3) {
             index = 0;
           }
         },
+        child: const Icon(
+          Icons.next_plan,
+        ),
       ),
       appBar: AppBar(
+        centerTitle: true,
         backgroundColor: Colors.red,
         title: const Text("list data"),
       ),
