@@ -15,13 +15,13 @@ class _MyAppState extends State<MyApp> {
   int counter = 0;
   @override
   Widget build(BuildContext context) {
+    counter++;
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         floatingActionButton: FloatingActionButton(
           onPressed: () {
             setState(() {
-              counter++;
               if (counter == 5) {
                 counter = 0;
               }
