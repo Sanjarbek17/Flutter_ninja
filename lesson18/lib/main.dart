@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import './ls.dart';
+import 'quote.dart';
 
 void main() {
   runApp(const MaterialApp(
@@ -34,35 +35,4 @@ class _MyAppState extends State<MyApp> {
       body: Column(children: lst.map((e) => quotes(e.text, e.author)).toList()),
     );
   }
-}
-
-Widget quotes(String text, String author) {
-  return Card(
-    margin: const EdgeInsets.all(10.0),
-    child: Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Text(
-            text,
-            style: TextStyle(
-              fontSize: 18.0,
-              color: Colors.grey[900],
-            ),
-          ),
-          const SizedBox(
-            height: 5.0,
-          ),
-          Text(
-            author,
-            style: TextStyle(
-              fontSize: 14.0,
-              color: Colors.grey[800],
-            ),
-          ),
-        ],
-      ),
-    ),
-  );
 }
