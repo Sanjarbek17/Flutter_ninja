@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
 Widget quotes(String text, String author) {
-  return quote(text: text, author: author);
+  return Quote(text: text, author: author);
 }
 
-class quote extends StatelessWidget {
-  String text;
-  String author;
-  quote({
+class Quote extends StatelessWidget {
+  final String text;
+  final String author;
+  const Quote({
     required this.text,
     required this.author,
     Key? key,
