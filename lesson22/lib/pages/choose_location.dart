@@ -9,12 +9,6 @@ class Location extends StatefulWidget {
 
 class _LocationState extends State<Location> {
   int counter = 0;
-  @override
-  void initState() {
-    // ignore: avoid_print
-    print("init state");
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {

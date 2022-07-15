@@ -1,7 +1,6 @@
 void main() {
   getData();
   // ignore: avoid_print
-  print('ikkinchi');
   int a = 10000;
   int x = 0;
   while (x <= a) {
