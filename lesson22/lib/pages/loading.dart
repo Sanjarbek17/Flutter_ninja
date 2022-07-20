@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:http/http.dart';
-import 'dart:convert';
+import 'package:lesson22/services/world_time.dart';
 
 class Loading extends StatefulWidget {
   const Loading({Key? key}) : super(key: key);
@@ -10,25 +9,43 @@ class Loading extends StatefulWidget {
 }
 
 class _LoadingState extends State<Loading> {
-  void getData() async {
-    Response response =
-        await get(Uri.parse('https://jsonplaceholder.typicode.com/todos/1'));
-    // ignore: avoid_print
-    Map data = jsonDecode(response.body);
-    // ignore: avoid_print
-    print(data['title']);
+  String time = 'loading';
+  void setupWorldTime() async {
+    WorldTime instance = WorldTime(
+        location: 'Uzbekistan', flag: 'uzb.png', url: 'Asia/Tashkent');
+    await instance.getData();
+    print(instance.time);
+    setState(() {
+      time = instance.time;
+    });
   }
 
+  int counter = 0;
   @override
   void initState() {
-    getData();
     super.initState();
+    setupWorldTime();
   }
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Text("loading screen"),
-    );
+    return Scaffold(
+        appBar: AppBar(
+          title: const Text("loading screen"),
+          centerTitle: true,
+          backgroundColor: Colors.green,
+        ),
+        floatingActionButton: FloatingActionButton(
+            child: Text('$counter'),
+            onPressed: () {
+              setState(() {
+                counter++;
+              });
+              // Navigator.pushNamed(context, '/location');
+            }),
+        body: Padding(
+          padding: const EdgeInsets.all(50.0),
+          child: Text(time),
+        ));
   }
 }

@@ -12,7 +12,6 @@ class _LocationState extends State<Location> {
 
   @override
   Widget build(BuildContext context) {
-    // ignore: avoid_print
     print("set state");
     return Scaffold(
       appBar: AppBar(
@@ -27,6 +26,7 @@ class _LocationState extends State<Location> {
           setState(() {
             counter++;
           });
+          Navigator.pushNamed(context, '/');
         },
       ),
     );
