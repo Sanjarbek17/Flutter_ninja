@@ -14,10 +14,13 @@ class _LoadingState extends State<Loading> {
     WorldTime instance = WorldTime(
         location: 'Uzbekistan', flag: 'uzb.png', url: 'Asia/Tashkent');
     await instance.getData();
-    print(instance.time);
-    setState(() {
-      time = instance.time;
+    // ignore: use_build_context_synchronously
+    Navigator.pushReplacementNamed(context, '/home', arguments: {
+      'location': instance.location,
+      'flag': instance.flag,
+      'time': instance.time,
     });
+    // print(instance.time);
   }
 
   int counter = 0;

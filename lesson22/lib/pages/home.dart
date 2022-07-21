@@ -11,6 +11,10 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     // ignore: avoid_print
+    Map data = ModalRoute.of(context)?.settings.arguments as Map;
+    // ignore: avoid_print
+    print(data['location']);
+    // ignore: avoid_print
     print("welcome home");
     return Scaffold(
         body: SafeArea(
@@ -21,7 +25,7 @@ class _HomeState extends State<Home> {
           },
           icon: const Icon(Icons.edit_location),
           label: const Text("Edit location"),
-        )
+        ),
       ]),
     ));
   }
