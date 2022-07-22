@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lesson22/services/world_time.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 class Loading extends StatefulWidget {
   const Loading({Key? key}) : super(key: key);
@@ -23,7 +24,6 @@ class _LoadingState extends State<Loading> {
     // print(instance.time);
   }
 
-  int counter = 0;
   @override
   void initState() {
     super.initState();
@@ -33,22 +33,13 @@ class _LoadingState extends State<Loading> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text("loading screen"),
-          centerTitle: true,
-          backgroundColor: Colors.green,
+      backgroundColor: Colors.blue[900],
+      body: const Center(
+        child: SpinKitCubeGrid(
+          color: Colors.white,
+          size: 50.0,
         ),
-        floatingActionButton: FloatingActionButton(
-            child: Text('$counter'),
-            onPressed: () {
-              setState(() {
-                counter++;
-              });
-              // Navigator.pushNamed(context, '/location');
-            }),
-        body: Padding(
-          padding: const EdgeInsets.all(50.0),
-          child: Text(time),
-        ));
+      ),
+    );
   }
 }
