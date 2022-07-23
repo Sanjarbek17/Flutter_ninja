@@ -7,6 +7,7 @@ class WorldTime {
   String time = 'Could not get time data';
   String flag;
   String url;
+  bool isDaytime = true;
 
   WorldTime({required this.location, required this.flag, required this.url});
 
@@ -22,6 +23,7 @@ class WorldTime {
       DateTime now = DateTime.parse(data['datetime']);
       String offset = data['utc_offset'].substring(1, 3);
       now = now.add(Duration(hours: int.parse(offset)));
+      isDaytime = now.hour >= 6 && now.hour <= 18 ? true : false;
       time = DateFormat.jm().format(now);
     } catch (e) {
       print("catch error: $e");
