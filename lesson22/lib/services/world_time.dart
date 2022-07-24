@@ -23,7 +23,7 @@ class WorldTime {
       DateTime now = DateTime.parse(data['datetime']);
       String offset = data['utc_offset'].substring(1, 3);
       now = now.add(Duration(hours: int.parse(offset)));
-      isDaytime = now.hour >= 6 && now.hour <= 18 ? true : false;
+      isDaytime = now.hour >= 6 && now.hour <= 20 ? true : false;
       time = DateFormat.jm().format(now);
     } catch (e) {
       print("catch error: $e");

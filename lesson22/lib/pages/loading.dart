@@ -10,7 +10,6 @@ class Loading extends StatefulWidget {
 }
 
 class _LoadingState extends State<Loading> {
-  String time = 'loading';
   void setupWorldTime() async {
     WorldTime instance = WorldTime(
         location: 'Uzbekistan', flag: 'uzb.png', url: 'Asia/Tashkent');
